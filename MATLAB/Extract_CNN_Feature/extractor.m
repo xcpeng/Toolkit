@@ -1,7 +1,7 @@
 function scores = extractor(im)
 % scores: n-dimensional vector, n represents the number of
 % category
-Conf();
+
 
 tic;
 input_data = {prepare_image(im)};
@@ -10,9 +10,9 @@ toc;
 tic;
 scores = caffe('forward', input_data);
 toc;
-scores=scores{1}; %convert scores(4-D vector) to n*10 vector.
+scores=scores{1}; 
 
-scores = squeeze(scores);
+%scores = squeeze(scores);%convert scores(4-D vector) to n*10 vector.
 
 end
 
